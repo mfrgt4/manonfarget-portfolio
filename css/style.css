@@ -1,0 +1,1116 @@
+/* =================================================================adan
+   1. CONFIGURATION GLOBALE & VARIABLES ROOT
+   ================================================================ */
+:root {
+    --my-pink: #D13670;
+    --soft-pink: #fce4ec;
+    --my-green: #024E32;
+    --bg-light: #fff5f8;
+    --white: #ffffff;
+    --bouncy-font: 'Crafty Girls', cursive;
+    --sans-font: Arial, sans-serif;
+}
+
+/* IMPORTATION DES POLICES PERSONNALISÉES */
+@font-face {
+    font-family: 'Bootzy TM';
+    src: url('../fonts/BootzyTM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'American Oak Script';
+    src: url('../fonts/american-oak-script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* RESET UNIVERSEL AVEC CURSEUR PERSONNALISÉ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('https://cdn.cursors-4u.net/previews/pink-clover-fbc13af9-32.webp') 32 32, auto !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--sans-font);
+    background-color: var(--white);
+    color: var(--my-green);
+    overflow-x: hidden;
+}
+
+/* =================================================================
+   2. HEADER & NAVIGATION
+   ================================================================ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: var(--white);
+    border-bottom: 1px solid #f2d2dc;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.portfolio-title {
+    font-family: 'American Oak Script', cursive;
+    font-size: 5rem;
+    font-style: italic;
+    transform: skewX(-10deg);
+    display: inline-block;
+}
+
+.header-logo-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--my-green);
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+    padding-bottom: 4px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--my-pink);
+    transition: width 0.35s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--my-pink);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- Bouton Hamburger : Caché par défaut sur PC --- */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--my-green);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: var(--my-pink);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: var(--my-pink);
+}
+
+/* =================================================================
+   3. HERO SECTIONS & FONDS D'ÉCRANS DÉDIÉS AUX PROJETS
+   ================================================================ */
+.hero-single-image {
+    position: relative;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('https://i.pinimg.com/originals/ce/75/8c/ce758cb28d27597df25bdec2c0fe244b.gif');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    border-bottom-left-radius: 50% 120px;
+    border-bottom-right-radius: 50% 120px;
+    overflow: hidden;
+    margin-bottom: -40px;
+    z-index: 2;
+}
+
+.id-visuelle-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/72/5f/71/725f716b301c21b8adc6471f49203dfc.gif');
+    background-position: center;
+}
+
+.id-communication-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/a8/6a/d8/a86ad8ef8c7b2c30d751e72118050919.gif');
+    background-position: center;
+}
+
+.id-montage-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/7d/5e/e7/7d5ee7e516e39e5edd2287e9478a269a.gif');
+    background-position: center;
+}
+
+.id-siteimmersif-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/cd/17/d8/cd17d80ee62d107209da0ae86a3e2c1c.gif');
+    background-position: center;
+}
+
+.id-magazine-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/53/a2/b6/53a2b6df9cef21f7276e85a76bc15842.gif');
+    background-position: center;
+}
+
+.id-chartregraphique-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/fd/95/7f/fd957f9eaca0f17a81e6ea3173cfb728.gif');
+    background-position: center;
+}
+
+.id-campagne-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/60/77/20/607720af0d2619ebeeab7a609687fcca.gif');
+    background-position: center;
+}
+
+.id-montageperso-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/montage-gossipgirl.gif');
+    background-position: center;
+}
+
+.id-affichesperso-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/f6/55/cd/f655cd72d0e02ad5cdc2b706f73caa25.gif');
+    background-position: center;
+}
+
+.id-lepetitcafe-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/2b/18/0b/2b180b0ce8a0ae7d4b7b283dad63937b.gif');
+    background-position: center;
+}
+
+.id-belladonna-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/8d/6f/0e/8d6f0e46ccf257efd3786b80d761771f.gif');
+    background-position: center;
+}
+
+.id-blog-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/f4/89/83/f4898359c6678ab87594c1b05c02e0fb.gif');
+    background-position: center;
+}
+
+.hero-header-text {
+    max-width: 900px;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+.sub-script {
+    font-family: var(--bouncy-font);
+    font-size: 2rem;
+    color: var(--my-pink);
+    display: block;
+    margin-bottom: -5px;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.hero-header-text h1 {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    font-size: 4rem;
+    color: var(--my-green);
+    line-height: 1.1;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
+}
+
+.hero-header-text h1 span {
+    color: var(--my-pink);
+}
+
+/* =================================================================
+   4. BOUTONS & BANNIÈRES
+   ================================================================ */
+.shop-now-btn {
+    background-color: var(--my-pink);
+    color: var(--white);
+    padding: 0.8rem 2.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(209, 54, 112, 0.25);
+}
+
+.shop-now-btn:hover {
+    background-color: var(--my-green);
+    transform: translateY(-2px);
+}
+
+.sub-banner {
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sub-banner h2 {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    color: var(--my-green);
+    margin-bottom: 1rem;
+}
+
+.sub-banner p {
+    font-family: var(--sans-font);
+    font-size: 1rem;
+    color: #527566;
+    line-height: 1.6;
+}
+
+/* =================================================================
+   5. GALERIE DE PROJETS & CARTES POLAROÏDS
+   ================================================================ */
+.projects-section {
+    background-color: var(--bg-light);
+    width: 100%;
+    padding: 5rem 5%;
+    border-radius: 30px;
+    margin: 3rem 0 0 0;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    letter-spacing: 2px;
+    font-size: 2.8rem;
+    color: var(--my-pink);
+    margin-bottom: 3rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, all 0.3s ease;
+}
+
+.polaroid-inner {
+    background: #ffffff;
+    padding: 18px 18px 24px 18px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(209, 54, 112, 0.05);
+    border: 2px solid var(--soft-pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.product-card.polaroid-1 {
+    transform: rotate(-1deg);
+}
+
+.product-card.polaroid-2 {
+    transform: rotate(1deg);
+}
+
+.product-card.polaroid-3 {
+    transform: rotate(-0.5deg);
+}
+
+.product-thumb {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 1.2rem;
+    filter: brightness(0.97);
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.product-card h3 {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    color: var(--my-green);
+    margin-bottom: 0.4rem;
+    transition: color 0.3s ease;
+}
+
+.badge-role {
+    font-family: var(--sans-font);
+    font-size: 0.7rem;
+    color: var(--my-pink);
+    background-color: #fce4ec;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-card p {
+    font-size: 0.82rem;
+    color: #618272;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+}
+
+/* EFFETS AU SURVOL DES POLAROÏDS */
+.product-card:hover {
+    transform: translateY(-8px) rotate(0deg);
+}
+
+.product-card:hover .polaroid-inner {
+    box-shadow: 0 20px 40px rgba(209, 54, 112, 0.12);
+    border-color: var(--my-pink);
+    background-color: #fff9fb;
+}
+
+.product-card:hover .product-thumb {
+    transform: scale(1.03);
+    filter: brightness(1);
+}
+
+.product-card:hover h3 {
+    color: var(--my-pink);
+}
+
+.product-card:hover .badge-role {
+    background-color: var(--my-pink);
+    color: #ffffff;
+}
+
+.product-card.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    display: none;
+}
+
+/* =================================================================
+   6. SECTION "À PROPOS"
+   ================================================================ */
+.about-container {
+    background-color: var(--bg-light);
+    padding: 5rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+    border-radius: 40px;
+}
+
+.about-text-side {
+    flex: 1;
+    min-width: 280px;
+}
+
+.about-text-side h2 {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    font-size: 2.5rem;
+    color: var(--my-green);
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+}
+
+.about-text-side p {
+    font-family: var(--sans-font);
+    color: #4a6b5d;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.about-photo-side {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-frame {
+    width: 340px;
+    height: 400px;
+    background-image: url('../images/moi.png');
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(2, 78, 50, 0.08);
+    transform: rotate(2deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-frame:hover {
+    transform: rotate(0deg) translateY(-8px);
+    box-shadow: 0 20px 40px rgba(209, 54, 112, 0.15);
+}
+
+/* =================================================================
+   7. TIMELINE (FRISE EXPÉRIENCES)
+   ================================================================ */
+.timeline-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.timeline-section h2 {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    text-align: center;
+    color: var(--my-pink);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px dashed var(--my-pink);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+    content: '♡';
+    position: absolute;
+    left: -2.6rem;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background-color: #fce4ec;
+    color: var(--my-pink);
+    border: 1px dashed var(--my-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.timeline-content {
+    background: #fff;
+    border: 1px dashed #ebd8cb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+}
+
+.timeline-date {
+    display: inline-block;
+    background-color: #fce4ec;
+    color: var(--my-pink);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-family: 'Crafty Girls', cursive, serif;
+    color: var(--my-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* =================================================================
+   8. BOUTONS SPÉCIFIQUES & FILTRES
+   ================================================================ */
+.filter-btn {
+    background-color: #fff;
+    color: var(--my-pink);
+    border: 1px dashed var(--my-pink);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--my-pink);
+    color: #fff;
+    border-style: solid;
+    transform: translateY(-2px);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.btn-retour {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background-color: var(--my-pink);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(209, 54, 112, 0.2);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-retour:hover {
+    background-color: #ffffff;
+    color: var(--my-pink);
+    border-color: var(--my-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(209, 54, 112, 0.3);
+}
+
+.btn-penche {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--my-pink);
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 2px dashed var(--my-pink);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 133, 179, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-penche:hover {
+    background-color: var(--my-green);
+    color: #ffffff;
+    border-color: var(--my-green);
+    transform: translateY(-2px) rotate(-3deg);
+    box-shadow: 0 6px 20px rgba(255, 133, 179, 0.3);
+}
+
+.post-it-banner {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    background-color: #fff9c4;
+    color: #4a4a4a;
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.1);
+    transform: rotate(-1.5deg);
+    max-width: 600px;
+    margin: 1.5rem auto;
+    border-left: 4px solid #fbc02d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-it-banner:hover {
+    transform: rotate(0deg) scale(1.01);
+    box-shadow: 3px 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+.post-it-banner h2 {
+    font-size: 1.5rem;
+    color: var(--my-pink);
+    margin-bottom: 0.3rem;
+    font-style: italic;
+}
+
+.post-it-banner p {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+/* =================================================================
+   9. LIVRE INTERACTIF (DIARY STYLE ELENA)
+   ================================================================ */
+.elena-diary-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 50px 15px;
+}
+
+.elena-book {
+    width: 100%;
+    max-width: 780px;
+    height: 640px;
+    background: #fffdf9;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(110, 90, 80, 0.12), 0 3px 10px rgba(0, 0, 0, 0.04);
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #eee5dc;
+    overflow: hidden;
+}
+
+.elena-book::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 25px;
+    background: rgba(246, 176, 187, 0.4);
+    border: 1px dashed rgba(246, 176, 187, 0.8);
+    z-index: 10;
+}
+
+.binder-holes {
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 5;
+}
+
+.hole {
+    width: 14px;
+    height: 14px;
+    background-color: #f7f3ed;
+    border: 2px solid #e0d4c8;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.elena-page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 40px 40px 40px 75px;
+    box-sizing: border-box;
+    animation: fadeInPage 0.4s ease;
+    overflow-y: auto;
+}
+
+.elena-page.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.elena-main-title {
+    font-family: 'Bootzy TM', serif;
+    font-size: 2rem;
+    color: #b5838d;
+    margin: 15px 0;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.elena-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.elena-btn {
+    background: #fff;
+    border: 1px solid #ebd8cb;
+    color: #b5838d;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(181, 131, 141, 0.15);
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elena-btn:hover {
+    background: #fdf2f4;
+    transform: translateY(-2px);
+}
+
+.elena-counter {
+    font-size: 1.1rem;
+    color: #939D7A;
+    font-family: 'Special Elite', cursive, serif;
+    letter-spacing: 1px;
+}
+
+/* =================================================================
+   10. FOOTER & ÉLÉMENTS FLOTTANTS
+   ================================================================ */
+footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--white);
+    border-top: 1px solid #f2d2dc;
+}
+
+footer h3 {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    color: var(--my-pink);
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    font-family: var(--sans-font);
+    font-size: 0.85rem;
+    color: var(--my-green);
+}
+
+.social-link {
+    color: var(--my-pink);
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--my-green);
+    transform: translateY(-3px);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--my-pink);
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(209, 54, 112, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: var(--my-green);
+    transform: translateY(-4px);
+}
+
+/* =================================================================
+   11. RESPONSIVE MOBILE
+   ================================================================ */
+
+@media (max-width: 768px) {
+
+    /* Masque les étoiles du header sur mobile */
+    .header-logo-icon {
+        display: none !important;
+    }
+
+    /* 1. Header et Navigation */
+    header {
+        padding: 1rem 4%;
+        position: relative;
+    }
+
+    .portfolio-title {
+        font-size: 3.5rem;
+        /* Réduit la taille du titre principal */
+    }
+
+    /* 2. Section Hero (En-tête de page) */
+    .hero-single-image {
+        height: 60vh;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        margin-bottom: -20px;
+    }
+
+    .hero-header-text h1 {
+        font-size: 2.4rem;
+        letter-spacing: 2px;
+    }
+
+    .sub-script {
+        font-size: 1.5rem;
+    }
+
+    /* 3. Grilles et Sections de projets */
+    .projects-section {
+        padding: 3rem 4%;
+        border-radius: 20px;
+        margin: 2rem 0 0 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        /* Force une seule colonne pour les polaroids sur mobile */
+        gap: 2rem;
+    }
+
+    /* 4. Section "À propos" en colonne */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        margin: 1rem 0;
+        padding: 3rem 5%;
+        border-radius: 25px;
+        gap: 2rem;
+    }
+
+    .about-frame {
+        width: 100%;
+        max-width: 300px;
+        height: 350px;
+    }
+
+    /* 5. Livre interactif (Diary d'Elena) adapté au mobile */
+    .elena-diary-wrapper {
+        padding: 20px 5px;
+    }
+
+    .elena-book {
+        height: 520px;
+        /* Réduit la hauteur pour éviter le débordement vertical */
+    }
+
+    .elena-page {
+        padding: 30px 20px 30px 50px;
+        /* Ajuste le décalage pour laisser place aux trous de reliure */
+    }
+
+    .elena-main-title {
+        font-size: 1.5rem;
+    }
+
+    /* 6. Frise chronologique (Timeline) */
+    .timeline-section {
+        padding: 0 1rem;
+    }
+
+    /* 7. Footer et éléments flottants */
+    footer {
+        padding: 3rem 1.5rem;
+    }
+
+    footer h3 {
+        font-size: 2rem;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    /* 8. Boutons, badges et centrage mobile */
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .tools-container,
+    .badges-wrapper,
+    .about-text-side,
+    .sub-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .tools-container *,
+    .badges-wrapper * {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* 9. Post-it adapté au mobile */
+    .post-it-banner {
+        max-width: 90%;
+        padding: 1rem 1.2rem;
+        margin: 1rem auto;
+    }
+
+    .post-it-banner h2 {
+        font-size: 1.25rem;
+    }
+
+    .post-it-banner p {
+        font-size: 0.85rem;
+    }
+
+    /* 10. MENU HAMBURGER (Glissement depuis la gauche) */
+    .hamburger-btn {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger-btn span {
+        display: block !important;
+        width: 100%;
+        height: 3px;
+        background-color: var(--my-green);
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger-btn.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--my-pink);
+    }
+
+    .hamburger-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-btn.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--my-pink);
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* Totalement hors-champ à gauche */
+        right: auto;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #fff5f8;
+        box-shadow: 5px 0 25px rgba(209, 54, 112, 0.15);
+        /* Ombre portée vers la droite */
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1000;
+    }
+
+    nav.open {
+        left: 0 !important;
+        /* Vient s'ouvrir depuis la gauche */
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem;
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--my-green);
+        text-decoration: none;
+    }
+}

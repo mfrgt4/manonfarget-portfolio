@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets Scolaires ✧˖°.</title>
+    <link rel="icon" type="image/gif" href="https://pixelsafari.neocities.org/favicon/animals/bear/bear15.gif">
+
+    <!-- Polices Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- En-tête et Navigation principale -->
+    <header>
+        <!-- Bouton Hamburger (Visible uniquement sur mobile) -->
+        <div class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <img src="https://pixelsafari.neocities.org/favicon/nature/star/star67.gif" alt="Icône décorative d'étoile"
+            class="header-logo-icon">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets-scolaires.html">Projets scolaires</a></li>
+                <li><a href="projets-personnels.html">Projets personnels</a></li>
+            </ul>
+        </nav>
+
+        <img src="https://pixelsafari.neocities.org/favicon/nature/star/star67.gif" alt="Icône décorative d'étoile"
+            class="header-logo-icon">
+    </header>
+
+    <!-- Section d'en-tête (Hero) de la page -->
+    <section id="accueil" class="hero-single-image">
+        <h1 class="portfolio-title">Mes projets scolaires</h1>
+        <div class="sub-banner post-it-banner">
+            <h2>Bienvenue sur mes projets scolaires ! ✧˖°.</h2>
+            <p>Retrouvez ici l'ensemble des projets réalisés dans le cadre de ma formation MMI.</p>
+        </div>
+    </section>
+
+    <br> <br> <br>
+
+    <!-- Section de la galerie des projets scolaires -->
+    <section id="projetsscolaires" class="projects-section">
+        <h2 class="section-title">galerie de mes réalisations MMI ୭ ˚.</h2>
+
+        <!-- Boutons de filtrage interactifs par catégorie -->
+        <div class="filter-buttons" style="display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <button class="filter-btn active" data-filter="all">Tous ✧</button>
+            <button class="filter-btn" data-filter="solo">Travail seul ✧</button>
+            <button class="filter-btn" data-filter="team">Travail en équipe ✧</button>
+        </div>
+
+        <!-- Grille d'affichage des cartes de projets -->
+        <div class="products-grid">
+            
+            <!-- Projet 1 : Identité Visuelle -->
+            <a href="mes-projets/projet-identite-visuelle.html" class="product-card polaroid-1" data-category="solo">
+                <div class="polaroid-inner">
+                    <img src="images/icones-projets/Tableau-Reverie.jpg" alt="Aperçu du projet Identité Visuelle" class="product-thumb">
+                    <h3>Identité Visuelle</h3>
+                    <span class="badge-role">Travail seul</span>
+                    <p>Refonte de l'Identité Visuelle d'un client réel.</p>
+                </div>
+            </a>
+
+            <!-- Projet 2 : Communication visuelle -->
+            <a href="mes-projets/projet-communication.html" class="product-card polaroid-2" data-category="team">
+                <div class="polaroid-inner">
+                    <img src="images/icones-projets/chat2.PNG" alt="Aperçu du projet Communication visuelle" class="product-thumb">
+                    <h3>Communication visuelle</h3>
+                    <span class="badge-role">Travail en équipe</span>
+                    <p>Concevoir une stratégie de communication pour une association en manque de visibilité.</p>
+                </div>
+            </a>
+
+            <!-- Projet 3 : Montage d'un tutoriel vidéo -->
+            <a href="mes-projets/projet-montage-video.html" class="product-card polaroid-3" data-category="team">
+                <div class="polaroid-inner">
+                    <img src="images/icones-projets/Mojito.PNG" alt="Aperçu du projet Montage Vidéo" class="product-thumb">
+                    <h3>Montage d'un tutoriel vidéo</h3>
+                    <span class="badge-role">Travail en équipe</span>
+                    <p>Création d'un tutoriel vidéo en anglais.</p>
+                </div>
+            </a>
+
+            <!-- Projet 4 : Site immersif dynamique -->
+            <a href="mes-projets/projet-site-immersif.html" class="product-card polaroid-1" data-category="solo">
+                <div class="polaroid-inner">
+                    <img src="images/icones-projets/Mystic-falls.jpg" alt="Aperçu du site immersif dynamique" class="product-thumb">
+                    <h3>Site immersif dynamique</h3>
+                    <span class="badge-role">Travail seul</span>
+                    <p>Developpement d'un site immersif dynamique sur un univers de notre choix.</p>
+                </div>
+            </a>
+
+            <!-- Projet 5 : Mise en page d'un magazine -->
+            <a href="mes-projets/projet-mise-en-page.html" class="product-card polaroid-2" data-category="solo">
+                <div class="polaroid-inner">
+                    <img src="images/icones-projets/Interface.PNG" alt="Aperçu de la mise en page" class="product-thumb">
+                    <h3>Mise en page d'un magazine</h3>
+                    <span class="badge-role">Travail seul</span>
+                    <p>Mise en page de la couverture du magazine étudiant.</p>
+                </div>
+            </a>
+
+            <!-- Projet 6 : Charte Graphique -->
+            <a href="mes-projets/projet-charte-graphique.html" class="product-card polaroid-3" data-category="solo">
+                <div class="polaroid-inner">
+                    <img src="images/icones-projets/The-Pit.png" alt="Aperçu de la charte graphique" class="product-thumb">
+                    <h3>Charte Graphique</h3>
+                    <span class="badge-role">Travail seul</span>
+                    <p>Conception d'une charte graphique pour une marque.</p>
+                </div>
+            </a>
+
+            <!-- Projet 7 : Campagne de communication -->
+            <a href="mes-projets/projet-campagne-comm.html" class="product-card polaroid-1" data-category="team">
+                <div class="polaroid-inner">
+                    <img src="images/icones-projets/Decathlon-Gym.jpg" alt="Aperçu de la campagne de communication" class="product-thumb">
+                    <h3>Campagne de communication</h3>
+                    <span class="badge-role">Travail en équipe</span>
+                    <p>Conception d'un service innovant et de sa campagne de communication.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Bouton de retour rapide en haut de page -->
+    <a href="#accueil" class="back-to-top" title="Remonter en haut">↑</a>
+
+    <!-- Pied de page (Footer et réseaux sociaux) -->
+    <footer id="contact">
+        <h3>prêt·e à collaborer ?</h3>
+        <p style="margin-bottom: 1rem;">Retrouvez-moi sur mes réseaux</p>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; font-weight: bold;">
+            <a href="https://www.linkedin.com/in/manon-farget-75baa5333/" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://www.instagram.com/xxmanclouds/?hl=fr" target="_blank" class="social-link">Instagram</a>
+            <a href="https://www.tiktok.com/@xxmanclouds?_r=1&_t=ZG-99dkv3igLdB" target="_blank" class="social-link">TikTok</a>
+            <a href="https://fr.pinterest.com/mfrgt/designs-%E0%AD%AD/" target="_blank"
+                class="social-link">Pinterest</a>
+        </div>
+        <p>© 2026 Manon Farget - Portfolio conçu avec passion.</p>
+    </footer>
+
+</body>
+
+</html>
