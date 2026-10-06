@@ -204,7 +204,7 @@ nav ul li a:hover::after {
 }
 
 .id-montageperso-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/originals/45/3e/3f/453e3f18fae70b39a630a0dc2b02cd5d.gif');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/montages.gif');
     background-position: center;
 }
 
